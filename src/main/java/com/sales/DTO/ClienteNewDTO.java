@@ -16,6 +16,7 @@ public class ClienteNewDTO implements Serializable {
 	private String estado;
 	private String cidade;
 	private String pais;
+	private String bairro;
 		
 	public ClienteNewDTO() {
 		
@@ -91,6 +92,14 @@ public class ClienteNewDTO implements Serializable {
 
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
+	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
 	}
 
 	

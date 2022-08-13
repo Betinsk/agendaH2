@@ -37,13 +37,15 @@ public class ClienteService {
 	//Method for insert
 	public Cliente insert(Cliente obj) {
 		obj.setId(null);
+		enderecoRepository.save(obj.getEndereco());
 		obj = clienteRepository.save(obj);
 		return obj;
 	}
 
 	public Cliente fromDTO(ClienteNewDTO objDto) {
-		Endereco end = new Endereco(null, objDto.getLogradouro(), objDto.getEstado(), objDto.getCidade(), objDto.getPais());
-		Cliente cliente = new Cliente(null, objDto.getNome(), objDto.getCpf(), objDto.getSexo(), objDto.getTelefone(), objDto.getEmail(), end);
-		return cliente;
+		Endereco end = new Endereco(null, objDto.getLogradouro(), objDto.getEstado(), objDto.getCidade(), objDto.getPais(), objDto.getBairro());
+	Cliente cliente = new Cliente(null, objDto.getNome(), objDto.getCpf(), objDto.getSexo(), objDto.getTelefone(), objDto.getEmail(), end);
+	cliente.getEndereco();
+	return cliente;
 	}
 }

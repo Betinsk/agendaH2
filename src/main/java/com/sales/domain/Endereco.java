@@ -24,19 +24,21 @@ public class Endereco implements Serializable{
 	private String estado;
 	private String cidade;
 	private String pais;
+	private String bairro;
 		
 	public Endereco() {
 		
 	}
 
 
-	public Endereco(Integer id, String logradouro, String estado, String cidade, String pais) {
+	public Endereco(Integer id, String logradouro, String estado, String cidade, String pais, String bairro) {
 		super();
 		this.id = id;
 		this.logradouro = logradouro;
 		this.estado = estado;
 		this.cidade = cidade;
 		this.pais = pais;
+		this.bairro = bairro;
 	}
 
 
@@ -113,6 +115,16 @@ public class Endereco implements Serializable{
 	public String toString() {
 		return "Endereco [id=" + id + ", logradouro=" + logradouro + ", estado=" + estado + ", cidade=" + cidade
 				+ ", pais=" + pais + "]";
+	}
+
+
+	public String getBairro() {
+		return bairro;
+	}
+
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
 	}
 	
 

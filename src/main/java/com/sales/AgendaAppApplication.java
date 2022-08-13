@@ -23,7 +23,7 @@ public class AgendaAppApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Endereco endereco = new Endereco(1, "Avenida Brasil" , "RJ", "Rio de Janeiro", "Brasil");
+	/*	Endereco endereco = new Endereco(1, "Avenida Brasil" , "RJ", "Rio de Janeiro", "Brasil");
 		Endereco endereco2 = new Endereco(2, "Avenida Rio Negro" , "MG", "Contagem", "Brasil");
 		System.out.println(endereco);
 		
@@ -42,7 +42,7 @@ public class AgendaAppApplication implements CommandLineRunner {
 
 		
 		Agendamento agendamento = new Agendamento(1, sdf.parse("2022-08-10 10:30"), servico, cliente, profissional);
-		System.out.println(agendamento);
+		System.out.println(agendamento); */
 
 		
 		
