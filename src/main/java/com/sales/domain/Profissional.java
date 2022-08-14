@@ -3,28 +3,42 @@ package com.sales.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_profissional")
 public class Profissional implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
 	private String cpf;
-	private String tipo;
+	private String profissao;
 	private String email;
 	
+	@OneToOne
+	@JoinColumn(name="estabelecimento")
 	private Estabelecimento estabelecimento;
 	
 	public Profissional() {
 		
 	}
 
-	public Profissional(Integer id, String nome, String cpf, String tipo, String email,
+	public Profissional(Integer id, String nome, String cpf, String profissao, String email,
 			Estabelecimento estabelecimento) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
-		this.tipo = tipo;
+		this.profissao = profissao;
 		this.email = email;
 		this.estabelecimento = estabelecimento;
 	}
@@ -53,12 +67,12 @@ public class Profissional implements Serializable {
 		this.cpf = cpf;
 	}
 
-	public String getTipo() {
-		return tipo;
+	public String getProfissao() {
+		return profissao;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setProfissao(String tipo) {
+		this.profissao = tipo;
 	}
 
 	public String getEmail() {
@@ -94,13 +108,5 @@ public class Profissional implements Serializable {
 		return Objects.equals(id, other.id);
 	}
 
-	@Override
-	public String toString() {
-		return "Profissional [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", tipo=" + tipo + ", email=" + email
-				+ ", estabelecimento=" + estabelecimento + "]";
-	}
-	
-
-	
 	
 }
