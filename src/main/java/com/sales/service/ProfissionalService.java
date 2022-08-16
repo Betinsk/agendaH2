@@ -45,9 +45,7 @@ public class ProfissionalService {
 	//Method for insert
 	public Profissional insert(Profissional obj) {
 		obj.setId(null);
-		estabelecimentoRepository.save(obj.getEstabelecimento());
-		
-		obj = profissionalRepository.save(obj);
+		 profissionalRepository.save(obj);
 		return obj;
 	}
 
@@ -57,7 +55,10 @@ public class ProfissionalService {
 	Estabelecimento est = new Estabelecimento(null, objDto.getTipo(), end);
 	estabelecimentoRepository.save(est);
 	Profissional pro = new Profissional(null, objDto.getNome(), objDto.getCpf(), objDto.getProfissao(), objDto.getEmail(), est);
-	profissionalRepository.save(pro);
+	/*
+	 * Erro metodo de inserir, não entendi o porque ainda.
+	 * profissionalRepository.save(pro);
+	 */
 	return pro;
 	
 	}
