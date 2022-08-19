@@ -12,7 +12,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_profissional")
 public class Profissional implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
