@@ -46,6 +46,8 @@ public class Agendamento implements Serializable{
 		this.profissional = profissional;
 	}
 
+	
+	
 	public Integer getId() {
 		return id;
 	}
@@ -104,14 +106,6 @@ public class Agendamento implements Serializable{
 		return Objects.equals(id, other.id);
 	}
 
-	@Override
-	public String toString() {
-		return "Agendamento [id=" + id + ", date=" + date + ", servico=" + servico + ", cliente=" + cliente
-				+ ", profissional=" + profissional + "]";
-	}
-
-
-	
 	
 	
 }

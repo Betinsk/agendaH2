@@ -80,7 +80,6 @@ public class AgendaAppApplication implements CommandLineRunner {
 		Agendamento agendamento = new Agendamento(1, sdf.parse("2022-08-10 10:30"), serv1, cli, profissional);
 		agendamentoRepository.save(agendamento);
 		
-		System.out.println(agendamento);
 
 		
 		
