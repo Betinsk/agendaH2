@@ -13,12 +13,14 @@ import com.sales.domain.Endereco;
 import com.sales.domain.Estabelecimento;
 import com.sales.domain.Profissional;
 import com.sales.domain.Servico;
+import com.sales.domain.Usuario;
 import com.sales.repositories.AgendamentoRepository;
 import com.sales.repositories.ClienteRepository;
 import com.sales.repositories.EnderecoRepository;
 import com.sales.repositories.EstabelecimentoRepository;
 import com.sales.repositories.ProfissionalRepository;
 import com.sales.repositories.ServicoRepository;
+import com.sales.repositories.UsuarioRepository;
 
 @SpringBootApplication
 public class AgendaAppApplication implements CommandLineRunner {
@@ -40,6 +42,9 @@ public class AgendaAppApplication implements CommandLineRunner {
 	
 	@Autowired
 	AgendamentoRepository agendamentoRepository;
+	
+	@Autowired
+	UsuarioRepository userRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(AgendaAppApplication.class, args);
@@ -80,6 +85,8 @@ public class AgendaAppApplication implements CommandLineRunner {
 		Agendamento agendamento = new Agendamento(1, sdf.parse("2022-08-10 10:30"), serv1, cli, profissional);
 		agendamentoRepository.save(agendamento);
 		
+		Usuario user = new Usuario(null, "UserAdmin", "12215586680", "Gmdust@hotmail.com", "123456");
+		userRepository.save(user);
 
 		
 		

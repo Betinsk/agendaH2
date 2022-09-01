@@ -30,7 +30,7 @@ public class Profissional implements Serializable {
 	public Profissional() {
 		
 	}
-
+	
 	public Profissional(Integer id, String nome, String cpf, String profissao, String email,
 			Estabelecimento estabelecimento) {
 		super();

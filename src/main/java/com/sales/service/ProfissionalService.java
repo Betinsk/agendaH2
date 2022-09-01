@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sales.DTO.ProfissionalDTO;
-import com.sales.domain.Cliente;
 import com.sales.domain.Endereco;
 import com.sales.domain.Estabelecimento;
 import com.sales.domain.Profissional;
@@ -48,7 +47,7 @@ public class ProfissionalService {
 		 profissionalRepository.save(obj);
 		return obj;
 	}
-
+	
 	public Profissional fromDTO(ProfissionalDTO objDto) {
 	Endereco end = new Endereco(null, objDto.getLogradouro(), objDto.getEstado(), objDto.getCidade(), objDto.getPais(), objDto.getBairro());
 	enderecoRepository.save(end);
