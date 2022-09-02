@@ -109,6 +109,23 @@ public class Agendamento implements Serializable{
 		return Objects.equals(id, other.id);
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Agendamento [id=");
+		builder.append(id);
+		builder.append(", date=");
+		builder.append(date);
+		builder.append(", servico=");
+		builder.append(servico);
+		builder.append(", cliente=");
+		builder.append(cliente);
+		builder.append(", profissional=");
+		builder.append(profissional);
+		builder.append("]");
+		return builder.toString();
+	}
+
 	
 	
 }

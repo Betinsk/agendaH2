@@ -41,7 +41,12 @@ public class AgendamentoResource {
 	//Method post 
 	@RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<Void> insert(@RequestBody Agendamento objAgendamento) {
-		objAgendamento = agendamentoService.insert(objAgendamento);
+		try {
+			objAgendamento = agendamentoService.insert(objAgendamento);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
 		.path("/{id}").buildAndExpand(objAgendamento.getId()).toUri();
 		return ResponseEntity.created(uri).build();
