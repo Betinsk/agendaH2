@@ -7,5 +7,10 @@ import com.sales.domain.Agendamento;
 
 @Repository
 public interface AgendamentoRepository extends JpaRepository<Agendamento, Integer>{
-
+	
+	/*@Query(native =true, value= "Select * from Agendamento where profissional = x and data = x")
+	void FindbyProfissionalAndDate(Integer Agendamento, Date date) {
+		*/
+	
+	
 }

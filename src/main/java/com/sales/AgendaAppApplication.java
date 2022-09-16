@@ -87,17 +87,18 @@ public class AgendaAppApplication implements CommandLineRunner {
 
 		
 		Agendamento agendamento = new Agendamento(null, sdf.parse("2022-08-10 10:30"), serv1, cli, profissional);
-		Agendamento agendamento2 = new Agendamento(null, sdf.parse("2022-08-11 10:30"), serv2, cli3, profissional);
+		Agendamento agendamento2 = new Agendamento(null, sdf.parse("2022-08-10 10:30"), serv2, cli3, profissional);
+		Agendamento agendamento3 = new Agendamento(null, sdf.parse("2022-08-10 10:30"), serv2, cli3, profissional);
+
 
 		agendamentoRepository.save(agendamento);
 		agendamentoRepository.save(agendamento2);
+		agendamentoRepository.save(agendamento3);
 
 		
 		Usuario user = new Usuario(null, "UserAdmin", "12215586680", "Gmdust@hotmail.com", "123456");
 		userRepository.save(user);
 
-		
-		
 		
 	}
 
