@@ -1,8 +1,5 @@
 package com.sales.service;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,7 +36,7 @@ public class AgendamentoService {
 		 "Objeto não encontrado! Id: " + id + ", Tipo: " + Agendamento.class.getName(), null)); 
 		}
 	
-	public int converterDateToInt(Agendamento objAgendamento) {
+/*	public int converterDateToInt(Agendamento objAgendamento) {
 		
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(objAgendamento.getDate());
@@ -58,11 +55,37 @@ public int converterHourToInt(Agendamento objAgendamento) {
 		
 		return c_hour;
 		
-	}
+	}*/
 	
+//Method for insert
+	public Agendamento insert(Agendamento agendamento) throws Exception {
+		agendamento.setId(null);
+
+		var cliente = clienteService.find(agendamento.getCliente().getId());
+		var servico = servicoService.find(agendamento.getServico().getId());
+		var profissional = profissionalService.find(agendamento.getProfissional().getId());
+
+		agendamento.setCliente(cliente);
+		agendamento.setServico(servico);
+		agendamento.setProfissional(profissional);
+
+		agendamento.getDate();
+
+		var agendamentos = agendamentoRepository.findAllByProfissionalAndDate(profissional, agendamento.getDate());
+		if (agendamentos == null){
+
+			agendamento = agendamentoRepository.save(agendamento);
+
+		}else{
+			throw new Exception("Já possui essa data e horario");
+		}
+
+		return agendamento;
+	}
+
 	
 	//Method for insert
-	public Agendamento insert(Agendamento objAgendamento) throws Exception {
+	/*public Agendamento insert(Agendamento objAgendamento) throws Exception {
 		objAgendamento.setId(null);
 		objAgendamento.setCliente(clienteService.find(objAgendamento.getCliente().getId()));
 		objAgendamento.setServico(servicoService.find(objAgendamento.getServico().getId()));
@@ -86,4 +109,6 @@ public int converterHourToInt(Agendamento objAgendamento) {
 		objAgendamento = agendamentoRepository.save(objAgendamento);
 		return objAgendamento;
 	}
+	
+	*/
 }
