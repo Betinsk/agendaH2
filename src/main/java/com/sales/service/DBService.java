@@ -3,6 +3,8 @@ package com.sales.service;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,6 +48,7 @@ public class DBService {
 	@Autowired
 	private UsuarioRepository userRepository;
 
+	@PostConstruct
 	public void instantiateTestDatabase() throws ParseException {
 		
 		Endereco end = new Endereco(null, "Avenida Brasil" , "RJ", "Rio de Janeiro", "Brasil", "Lapa");
