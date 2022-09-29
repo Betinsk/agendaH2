@@ -57,6 +57,38 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 	    public ParametroAgenda (){
 	        this.dataCadastro = new Date();
 	    }
+	    
+	    
+
+		public ParametroAgenda(Integer id, Profissional profissional, boolean segunda, boolean terca, boolean quarta,
+				boolean quinta, boolean sexta, boolean sabado, boolean domingo, Integer intervaloAgenda,
+				Integer horaInicio, Integer minutoInicio, Integer horaFim, Integer minutoFim, Integer horaIntervalo,
+				Integer minutoIntervalo, Integer tempoIntervalo, Date dataCadastro, Date dataAtualizacao,
+				Estabelecimento estabelecimento) {
+			super();
+			this.id = id;
+			this.profissional = profissional;
+			this.segunda = segunda;
+			this.terca = terca;
+			this.quarta = quarta;
+			this.quinta = quinta;
+			this.sexta = sexta;
+			this.sabado = sabado;
+			this.domingo = domingo;
+			this.intervaloAgenda = intervaloAgenda;
+			this.horaInicio = horaInicio;
+			this.minutoInicio = minutoInicio;
+			this.horaFim = horaFim;
+			this.minutoFim = minutoFim;
+			this.horaIntervalo = horaIntervalo;
+			this.minutoIntervalo = minutoIntervalo;
+			this.tempoIntervalo = tempoIntervalo;
+			this.dataCadastro = dataCadastro;
+			this.dataAtualizacao = dataAtualizacao;
+			this.estabelecimento = estabelecimento;
+		}
+
+
 
 		public Integer getId() {
 			return id;
